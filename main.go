@@ -68,11 +68,6 @@ type Model struct {
 	width  int
 }
 
-func NewModel() Model {
-	m := Model{width: maxWidth}
-	m.lg = lipgloss.DefaultRenderer()
-	m.styles = NewStyles(m.lg)
-
 	m.form = huh.NewForm(
 		huh.NewGroup(
 			huh.NewSelect[string]().
