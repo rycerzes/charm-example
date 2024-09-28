@@ -77,7 +77,7 @@ func NewModel() Model {
 		huh.NewGroup(
 			huh.NewSelect[string]().
 				Key("class").
-				Options(huh.NewOptions("Warrior", "Mage", "Rogue")...).
+				Options(huh.NewOptions("Warrior", "Wiz", "Rogue")...).
 				Title("Choose your class").
 				Description("This will determine your department"),
 
@@ -255,7 +255,7 @@ func (m Model) getRole() (string, string) {
 		default:
 			return "Tank", "General tank. Does damage, takes damage. Responsible for tanking."
 		}
-	case "Mage":
+	case "Wiz":
 		switch level {
 		case "1":
 			return "DPS Associate", "Finds DPS deals and passes them on to DPS Manager."
