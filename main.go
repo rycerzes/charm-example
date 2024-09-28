@@ -77,7 +77,7 @@ func NewModel() Model {
 		huh.NewGroup(
 			huh.NewSelect[string]().
 				Key("class").
-				Options(huh.NewOptions("Warrior", "Wiz", "Rogue")...).
+				Options(huh.NewOptions("Warrior", "Wiz", "Rogue", "King")...).
 				Title("Choose your class").
 				Description("This will determine your department"),
 
@@ -265,6 +265,15 @@ func (m Model) getRole() (string, string) {
 			return "DPS", "Does damage and ideally does not take damage. Logs hours in JIRA."
 		}
 	case "Rogue":
+		switch level {
+		case "1":
+			return "Stealth Junior Designer", "Designs rougue-like activities. Reports to Stealth Lead."
+		case "9999":
+			return "Stealth Lead", "Lead designer for all things stealth. Some travel required."
+		default:
+			return "Sneaky Person", "Sneaks around and does sneaky things. Reports to Stealth Lead."
+		}
+	case "King":
 		switch level {
 		case "1":
 			return "Stealth Junior Designer", "Designs rougue-like activities. Reports to Stealth Lead."
