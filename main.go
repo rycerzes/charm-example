@@ -153,7 +153,7 @@ func (m Model) View() string {
 		title, role := m.getRole()
 		title = s.Highlight.Render(title)
 		var b strings.Builder
-		fmt.Fprintf(&b, "Congratulations, you’re Charm’s newest\n%s!\n\n", title)
+		fmt.Fprintf(&b, "Congratulations, you’re MLSA’s newest\n%s!\n\n", title)
 		fmt.Fprintf(&b, "Your job description is as follows:\n\n%s\n\nPlease proceed to HR immediately.", role)
 		return s.Status.Margin(0, 1).Padding(1, 2).Width(48).Render(b.String()) + "\n\n"
 	default:
